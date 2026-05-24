@@ -1,0 +1,22 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1779443975.778235    5052 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1779443977.428158    5052 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING:tensorflow:From C:\laragon\bin\python\python-3.10\lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+INFO:     Started server process [24200]
+INFO:     Waiting for application startup.
+ERROR:    Traceback (most recent call last):
+  File "C:\laragon\bin\python\python-3.10\lib\site-packages\starlette\routing.py", line 732, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+  File "C:\laragon\bin\python\python-3.10\lib\site-packages\starlette\routing.py", line 608, in __aenter__
+    await self._router.startup()
+  File "C:\laragon\bin\python\python-3.10\lib\site-packages\starlette\routing.py", line 709, in startup
+    await handler()
+  File "D:\document-classifier\backend\main.py", line 107, in load_model
+    print(f"\U0001f4c1 Working dir: {os.getcwd()}")
+  File "C:\laragon\bin\python\python-3.10\lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4c1' in position 0: character maps to <undefined>
+
+ERROR:    Application startup failed. Exiting.

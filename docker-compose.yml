@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: docid-backend
+    restart: unless-stopped
+    volumes:
+      # Volume agar Anda bisa ganti/update file .keras langsung dari server lokal tanpa build ulang container
+      - ./backend/model:/app/model
+    environment:
+      - TZ=Asia/Jakarta
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: docid-frontend
+    restart: unless-stopped
+    ports:
+      - "8007:80"
+    depends_on:
+      - backend
+    environment:
+      - TZ=Asia/Jakarta
